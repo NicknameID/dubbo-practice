@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: 'service.provider'
+
+dubbo:
+  registry:
+    protocol: zookeeper
+    address: zookeeper://localhost:2181
+  protocol:
+    name: dubbo
+    port: -1
