@@ -18,29 +18,40 @@
     <properties>
         <java.version>11</java.version>
         <dubbo.version>2.7.5</dubbo.version>
+        <!-- 内部依赖服务版本管理 -->
+        <service-provider.version>1.0.0</service-provider.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>${dubbo.version}</version>
-        </dependency>
-
         <!-- 项目内部依赖-START -->
         <dependency>
             <groupId>tech.mufeng.demo.dubbo-practice</groupId>
             <artifactId>service-provider</artifactId>
-            <version>1.0.0</version>
+            <version>${service-provider.version}</version>
         </dependency>
         <!-- 项目内部依赖-END -->
+
+        <!-- Spring start -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Spring end -->
+
+        <!-- Apache Dubbo start -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+        </dependency>
+        <!-- Apache Dubbo end -->
     </dependencies>
 
     <build>
+        <finalName>ROOT</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

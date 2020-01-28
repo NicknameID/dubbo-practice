@@ -9,3 +9,7 @@ dubbo:
   protocol:
     name: dubbo
     port: -1
+  provider:
+    timeout: 10000 # 超时时间10s
+    retries: 3
+    loadbalance: leastactive # 最少活跃调用数, 使慢的提供者收到更少请求

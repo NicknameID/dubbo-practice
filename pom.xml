@@ -25,17 +25,11 @@
 	</modules>
 
 	<dependencies>
+		<!-- Spring start -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -47,23 +41,47 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- Spring end -->
 
+		<!-- Ops start -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		<!-- Ops end -->
 
+		<!-- Utils start -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!-- Utils end -->
+
+		<!-- Others start -->
+		<!-- 被jdk-11取消掉的包为了兼容第三方的jar所以需要加上 -->
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.xml.bind</artifactId>
 			<version>10.0-b28</version>
 		</dependency>
-
-		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-recipes</artifactId>
-			<version>4.2.0</version>
-		</dependency>
+		<!-- Others start -->
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-recipes</artifactId>
+				<version>4.2.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.dubbo</groupId>
+				<artifactId>dubbo-spring-boot-starter</artifactId>
+				<version>2.7.5</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 </project>
