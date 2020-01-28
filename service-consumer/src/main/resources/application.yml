@@ -5,5 +5,5 @@ spring:
     name: 'service.consumer'
 dubbo:
   registry:
-    protocol: zookeeper
-    address: zookeeper://localhost:2181
+    protocol: nacos
+    address: nacos://localhost:8848
